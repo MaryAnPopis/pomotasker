@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Pomodoro timer with a to-do list">
+  <meta name="keywords" content="Pomodoro,Timer,Todo,To-do">
+  <meta name="author" content="Mariam Dominguez">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pomotasker</title>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <div class="container-fliud container-timer">
+        <div id="timer">
+          <span id="time-left">25:00</span>
+        </div>
+        <h2 class="white-title">Pomodoro</h2>
+        <button type="button" data-time="10" id="start-btn">Start</button>
+        <button type="button" id="stop-btn">Pause</button>
+      </div>
+    </section>
+    <section>
+      <div class="container-fluid container-tasker">
+        <h2 class="white-title">My Tasks </h2>
+        <button type="button-primary">+</button>
+      </div>
+    </section>
+    <script src="./js/index.js"></script>
+  </div>
+
+</body>
+
+</html>
