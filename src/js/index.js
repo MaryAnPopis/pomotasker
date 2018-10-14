@@ -51,7 +51,7 @@ function displayTimeLeft() {
     const minutes = Math.floor(totalTime / 60);
     const seconds = totalTime - (minutes * 60);
     const timeMinutes = document.getElementById("time-left");
-    const display = `${padTime(minutes)}:${padTime(seconds)}`;
+    const display = `${padTime(minutes)} : ${padTime(seconds)}`;
 
     timeMinutes.textContent = display;
     document.title = display;
