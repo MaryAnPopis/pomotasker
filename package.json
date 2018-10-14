@@ -7,7 +7,7 @@
   "author": "Mariam Dominguez",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --entry ./src/js/index.js --output ./dist/app.bundle.js",
+    "start": "webpack-dev-server --entry ./src/js/index.js --output ./dist/app.bundle.js --mode development",
     "build": "webpack"
   },
   "devDependencies": {
