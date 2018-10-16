@@ -45,7 +45,7 @@ h5 {
 }
 
 .btn-add {
-  width: 30vw;
+  width: 23vw;
 }
 
 @media only screen and (max-width: 767px) {
@@ -128,5 +128,10 @@ button {
   to {
     opacity: 1;
   }
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+  color: #242424;
 }
 /* End of Modal Styles */
