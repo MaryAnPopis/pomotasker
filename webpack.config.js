@@ -2,7 +2,7 @@ const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/js/index.js",
+  entry: ["./src/js/pomodoro-app.js", "./src/js/modal.js", "./src/js/task.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "app.bundle.js"
