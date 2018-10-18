@@ -17,5 +17,11 @@ function closeModal() {
 function clickOutside(e) {
   if (e.target === modal) {
     modal.style.display = "none";
+    cleanTextArea();
   }
+}
+
+function cleanTextArea() {
+  let descriptionTxt = document.getElementById("task-description");
+  descriptionTxt.value = "";
 }
