@@ -32,45 +32,48 @@
       <div class="col-md-6 bg main-light-color">
         <div class="flex-center-width mt-3">
           <h2 class="white-title  mb-5">My Tasks</h2>
-          <button id="btn-modal" type="button-primary" class="btn btn-outline-secondary btn-add">+</button>
-          <!-- Modal -->
-          <div id="modal-task" class="task-modal">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Add a new task</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label>Task priority</label>
-                      <select class="form-control" id="task-priority">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Task description</label>
-                      <textarea class="form-control" id="task-description" rows="4"></textarea>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary">Add task</button>
-                </div>
+          <button id="btn-modal" type="button-primary" class="btn btn-outline-secondary task-section-size">+</button>
+          <div id="task-container" class="task-container"></div>
+        </div>
+        <!-- Modal -->
+        <div id="modal-task" class="task-modal">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add a new task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label>Task priority</label>
+                    <select class="form-control" id="task-priority">
+                      <option value="high">High</option>
+                      <option value="medium">Medium</option>
+                      <option value="low">Low</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Task description</label>
+                    <textarea class="form-control" id="task-description" rows="4"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-add">Add task</button>
               </div>
             </div>
-
           </div>
         </div>
-        <script src="./js/pomodoro-app.js"></script>
-        <script src="./js/modal.js"></script>
+        <!-- Modal -->
       </div>
+      <script src="./js/pomodoro-app.js"></script>
+      <script src="./js/modal.js"></script>
+      <script src="./js/task.js"></script>
     </div>
+  </div>
 
 </body>
 
