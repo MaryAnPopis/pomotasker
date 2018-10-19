@@ -3,16 +3,12 @@ const workTime = 25;
 let totalTime = workTime * 60;
 let timer;
 let isBreak = true;
-const startBtn = document.getElementById("start-btn");
-startBtn.addEventListener("click", startPomodoro);
-const stopBtn = document.getElementById("stop-btn");
-stopBtn.addEventListener("click", stopTimer);
 
-function startPomodoro() {
+export const startPomodoro = () => {
   timer = setInterval(() => {
     countdown(true);
   }, 1000);
-}
+};
 
 function countdown() {
   if (totalTime >= 1) {
@@ -37,10 +33,10 @@ function getTime() {
   return isBreak ? breakTime : workTime;
 }
 
-function stopTimer() {
+export const stopTimer = () => {
   clearInterval(timer);
   timer = null;
-}
+};
 
 function padTime(time) {
   return `${time < 10 ? "0" : ""}${time}`;
