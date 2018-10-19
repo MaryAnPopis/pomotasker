@@ -1,11 +1,12 @@
-document.getElementById("btn-add").addEventListener("click", addTasks);
+import { cleanTextArea, closeModal } from "./modal";
+
 window.onload = function() {
   if (JSON.parse(localStorage.getItem("tasks")) !== null) {
     getTasks();
   }
 };
 
-function addTasks() {
+export const addTasks = () => {
   let selectPriority = document.getElementById("task-priority").value;
   let descriptionTxt = document.getElementById("task-description");
   let info = {
@@ -24,7 +25,7 @@ function addTasks() {
   cleanTextArea();
   closeModal();
   getTasks();
-}
+};
 
 function getTasks() {
   let taskArr = JSON.parse(localStorage.getItem("tasks"));
