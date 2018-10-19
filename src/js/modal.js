@@ -10,9 +10,9 @@ function openModal() {
   modal.style.display = "block";
 }
 
-function closeModal() {
+export const closeModal = () => {
   modal.style.display = "none";
-}
+};
 
 function clickOutside(e) {
   if (e.target === modal) {
@@ -21,7 +21,7 @@ function clickOutside(e) {
   }
 }
 
-function cleanTextArea() {
+export const cleanTextArea = () => {
   let descriptionTxt = document.getElementById("task-description");
   descriptionTxt.value = "";
-}
+};
