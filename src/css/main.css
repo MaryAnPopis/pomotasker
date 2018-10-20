@@ -1,3 +1,11 @@
+:root {
+  --main-dark: #242424;
+  --main-light: #323232;
+  --priority-high: #f55151;
+  --priority-medium: #e67e22;
+  --priority-low: #eec300;
+}
+
 body {
   height: 100vh;
   margin: 0;
@@ -6,11 +14,11 @@ body {
 
 /* Colors */
 .main-light-color {
-  background-color: #323232 !important;
+  background-color: var(--main-light) !important;
 }
 
 .main-dark-color {
-  background-color: #242424 !important;
+  background-color: var(--main-dark) !important;
 }
 
 .col-md-6 {
@@ -70,7 +78,7 @@ button:focus {
 .modal-content {
   text-align: left;
   padding: 5%;
-  background-color: #242424;
+  background-color: var(--main-dark);
   border-radius: 20px;
   -webkit-box-shadow: 9px 7px 35px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 9px 7px 35px 0px rgba(0, 0, 0, 0.15);
@@ -84,7 +92,7 @@ button:focus {
 
 .modal-footer,
 .modal-header {
-  border-color: #242424;
+  border-color: var(--main-dark);
 }
 
 .form-control {
@@ -95,7 +103,7 @@ button:focus {
 select,
 textarea {
   border: 3px solid #f8f6f3 !important;
-  background-color: #242424 !important;
+  background-color: var(--main-dark) !important;
 }
 
 select option {
@@ -122,7 +130,7 @@ button {
 
 .btn-secondary,
 .btn-secondary:hover {
-  color: #242424;
+  color: var(--main-dark);
 }
 /* End of Modal Styles */
 
@@ -143,8 +151,8 @@ button {
 }
 
 .single-task {
-  background-color: #242424;
-  border-radius: 17px;
+  background-color: var(--main-dark);
+  border-radius: 14px;
   margin-top: 5%;
   padding: 4% 2% 4% 7%;
   margin-left: auto;
@@ -152,6 +160,59 @@ button {
   -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.border-priority-high {
+  border-left: 14px solid var(--priority-high);
+}
+.border-priority-medium {
+  border-left: 14px solid var(--priority-medium);
+}
+.border-priority-low {
+  border-left: 14px solid var(--priority-low);
+}
+
+/* Radio button styles */
+input[type="radio"].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type="radio"],
+label {
+  cursor: pointer;
+}
+
+.custom-control-label::after {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  background-color: var(--main-dark);
+}
+
+.label-priority-high::after {
+  border-color: var(--priority-high);
+}
+.label-priority-medium::after {
+  border-color: var(--priority-medium);
+}
+.label-priority-low::after {
+  border-color: var(--priority-low);
+}
+/* Radio button styles end */
+
+.lateral-task-bar {
+  width: 14px;
+  height: auto;
+  background-color: red;
 }
 
 /* Scroll bar style */
@@ -162,8 +223,8 @@ button {
 }
 
 .task-container::-webkit-scrollbar-thumb {
-  background-color: #242424;
-  outline: 1px solid #242424;
+  background-color: var(--main-dark);
+  outline: 1px solid var(--main-dark);
   border-radius: 80px;
 }
 
