@@ -33,10 +33,10 @@ function getTime() {
   return isBreak ? breakTime : workTime;
 }
 
-export const stopTimer = () => {
+export function stopTimer() {
   clearInterval(timer);
   timer = null;
-};
+}
 
 function padTime(time) {
   return `${time < 10 ? "0" : ""}${time}`;
