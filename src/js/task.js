@@ -33,11 +33,17 @@ function getTasks() {
   let singleTask;
 
   taskContainer.innerHTML = "";
-  taskArr.map(task => {
+  taskArr.map((task, index) => {
     singleTask = `
-    <div class="task-section-size single-task ">
-    <div class="${printColorPriority(task)} priority"></div>
-     ${task.description}
+    <div class="task-section-size single-task border-priority-${printColorPriority(
+      task
+    )}">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="task-${index}" name="tasks" class="custom-control-input">
+        <label class="custom-control-label label-priority-${printColorPriority(
+          task
+        )}" for="task-${index}">${task.description}</label>
+      </div>
     </div>`;
     taskContainer.innerHTML += singleTask;
   });
