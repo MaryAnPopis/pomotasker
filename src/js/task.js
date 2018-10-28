@@ -2,16 +2,19 @@ import { cleanTextArea, closeModal } from "./modal";
 
 window.onload = function() {
   if (JSON.parse(localStorage.getItem("tasks")) !== null) {
-    getTasks();
+    printTasks();
   }
 };
 
 export const addTasks = () => {
-  let selectPriority = document.getElementById("task-priority").value;
+  let selectPriority = document.getElementById("task-priority");
   let descriptionTxt = document.getElementById("task-description");
+  let getImportance = selectPriority.options[selectPriority.selectedIndex];
+
   let info = {
-    priority: selectPriority,
-    description: descriptionTxt.value
+    priority: selectPriority.value,
+    description: descriptionTxt.value,
+    importance: getImportance.dataset.importance
   };
   if (localStorage.getItem("tasks") === null) {
     let taskArr = [];
@@ -24,16 +27,22 @@ export const addTasks = () => {
   }
   cleanTextArea();
   closeModal();
-  getTasks();
+  printTasks();
 };
 
-function getTasks() {
-  let taskArr = JSON.parse(localStorage.getItem("tasks"));
+function printTasks() {
+  let taskArray = JSON.parse(localStorage.getItem("tasks"));
   let taskContainer = document.getElementById("task-container");
   let singleTask;
 
   taskContainer.innerHTML = "";
-  taskArr.map((task, index) => {
+
+  // Sort the array from high to low
+  taskArray.sort((a, b) => {
+    return parseInt(a.importance) - parseInt(b.importance);
+  });
+
+  taskArray.map((task, index) => {
     singleTask = `
     <div class="task-section-size single-task border-priority-${printColorPriority(
       task
@@ -64,4 +73,4 @@ function printColorPriority(task) {
   return color;
 }
 
-function remove() {}
+function removeTask() {}
