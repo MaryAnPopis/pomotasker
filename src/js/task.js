@@ -42,6 +42,7 @@ function printTasks() {
     return parseInt(a.importance) - parseInt(b.importance);
   });
 
+  taskArray.innerHTML = '';
   taskArray.map((task, index) => {
     singleTask = `
     <div class="task-section-size single-task border-priority-${printColorPriority(
